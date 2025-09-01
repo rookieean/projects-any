@@ -1,0 +1,38 @@
+body {
+    background-color: hotpink;
+    padding: 0;
+    margin: 0;
+    font-family: "Roboto Slab", serif;
+}
+
+header {
+    background: rgb(131, 58, 180);
+    background: linear-gradient(
+        90deg,
+        rgba(131. 58, 180, 1) 0%,
+        rgba(253, 176, 69, 1) 100%
+    );
+    padding: 20px;
+}
+
+.headerContent {
+    display: felx;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.contenHolder {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.imgProfile {
+    width: 200px;
+    height: 200px;
+    border: 5px solid white;
+    border-radius: 100%;
+    box-shadow: 5px 5px 10px 2px rgba(84, 43, 11, 0.485);
+    transition: all;
+    transition-duration: 1s;
+}
+
