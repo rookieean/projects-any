@@ -11,3 +11,125 @@ body {
     max-width: 1200px;
     margin: 0 auto; /* 0 atas bwh akan 0, sedang kanan kiri akan auto*/
 }
+
+header {
+    display: flex;  /* membuat kolom per kolom*/
+    justify-content: space-between; /* membuat space antara logo dan navbar */
+    align-items: center; /* semua elemen yang di header akan ditengah*/ 
+}
+
+nav {
+    margin: 4em; /* bagian home products jadi lebih ke bwah, em/pix */
+}
+
+/* menargetkan bagian nav dan ul secara bersamaan */
+nav ul {
+    list-style-type: none; /* membuang titik hitam 4 pada list*/
+    display: flex;  /* membuat 4 baris product, home dll menjadi 4 kolom vertikal*/
+    gap: 4.1em; /* membuat jarak antar home, products, dll */
+    margin: 0; /* menghilangakn 'jarak putih' disekitarnya */
+}
+
+
+/* menargetkan tautan apapun dalam nav > a */
+nav ul li a {
+    text-decoration: none; /* garis bawah akan hilang */
+    color: black;
+    text-transform: uppercase; /* text jadi huruf besar semua */
+    font-size: 1.6rem; /* 1.6 diambil dari font size di design 16 mjd 1.6 rem */
+
+    /* ini akan diindukan ke 'active' dibwhnya */
+    position: relative; 
+}
+
+
+/*
+    dia sering menggunakan
+     rem untuk font dll
+     em untuk jarak, skala, margin, padding, border dll
+*/
+
+
+
+/* bagian garis bawah di navbar */
+nav ul li a.active:before {
+
+    /* anak dari relatif */
+    position: absolute;
+
+    content: "";
+    width: 35%;
+    height: 1px;
+    border-bottom: 2px solid black;
+    bottom: -6px;
+}
+
+
+
+
+
+
+
+
+/* HERO SECTION */
+
+main {
+    display: flex; /* membagi jadi dua kolom */
+    gap: 8em; /* memberi jarak antar dua kolom */
+    margin-top: 11em; /* memberi jarak atas */
+}
+
+.left-col {
+    width: 45%; /* lef colom menempati 45% dari kontainer induk main */
+}
+
+.left-col {
+    flex-grow: 1; /* mengkonsumsi jmlh lebar yang dia butuhkan berdsrkan konten yang ada di dalamnya */
+}
+
+h1 {
+    font-size: 5.2rem; /* dari 52 design jadi 5.2rem */
+    font-family: 'Playfair Display';
+    font-weight: normal; /* dgn bobot font 'normal' */
+    margin: 0;
+}
+
+.subhead {
+    font-size: 1.8rem;
+}
+
+.cta-btns {
+    margin: 5em 0;
+}
+
+/* dia akan kasih style sama pada dua ini */
+.cta-btns, .secondary-cta {
+    display: flex;
+    gap: 2em;
+}
+
+.primary-cta {
+    background-color: #F2F0DF;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+    border-radius: 1.9em; /* border radius 19 jadi 1.9em */
+    padding: 1em 2em; /* jarak putih dalam kotak, atas 1, knan kiri 2 */
+    align-items: center;
+}
+
+
+.secondary-cta {
+    font-size: 1.8rem;
+    text-decoration: none;
+    color: black;
+    display: block; /* agar kata-kata tidak terbungkus */
+    padding: 1em 0; /* ats bwah 1 dan kiri kanan 0 */
+}
+
+.secondary-cta svg {
+    width: 20px; /*pixel keterangan*/
+}
+
+/* pixel = ketika zoom in dia akan tetap 20px, its fine, ketika gak butuh untuk diskalakan */
