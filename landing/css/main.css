@@ -159,7 +159,7 @@ h1 {
 .news:before {
     position: absolute;
     content: "";
-    background: url('../img/confetti.svg');
+    background: url('../img/Vector.svg');
     width: 100px;
     height: 100px;
     /* menaruh svgnya tepat seperti di design */
@@ -187,13 +187,14 @@ p.detils {
 .right-col {
     display: grid;
     gap: 2.9em;
-
-    /* ini akan membagi menjadi 3 kotak */
+    grid-template-columns: repeat(2, auto);
+    grid-template-areas: "left right" "left bottom";
+    /* ini akan membagi menjadi 3 kotak
     grid-template-columns: repeat(2, auto);
     /* membagi kiri kiri, kanan, bawah, untuk setiap kotak */
-    grid-template-areas: 
+   /* grid-template-areas: 
         "left right"
-        "left bottom";
+        "left bottom"; */
 }
 
 /* untuk tulisan dalam card disusun */
@@ -208,7 +209,7 @@ p.detils {
 
 .card1 {
     grid-area: left;
-    background-image: url('..img/back.jpg');
+    background-image: url('../img/back.jpg');
     position: relative;
 }
 
@@ -224,12 +225,12 @@ p.detils {
 }
 .card2 {
     grid-area: right;
-    background-image: url('..img/shoes.jpg');
+    background-image: url('../img/cloth.jpg');
 }
 
 .card3 {
     grid-area: bottom;
-    background-image: url('..img/cloth.jpg');
+    background-image: url('../img/shoes.jpg');
     background-position: 50%;
 }
 
