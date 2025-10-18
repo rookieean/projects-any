@@ -216,7 +216,7 @@ p.detils {
 .card1:before {
     position: absolute;
     content: "";
-    background: url();
+    background: url('../img/Tag.svg');
     width: 100px;
     height: 100px;
     top: 20px;
