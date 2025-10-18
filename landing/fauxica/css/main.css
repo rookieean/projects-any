@@ -9,59 +9,38 @@ body {
 
 .wrapper {
     max-width: 1200px;
-    margin: 0 auto; /* 0 atas bwh akan 0, sedang kanan kiri akan auto*/
+    margin: 0 auto;
 }
 
+/* Header & Navigation */
+
 header {
-    display: flex;  /* membuat kolom per kolom*/
-    justify-content: space-between; /* membuat space antara logo dan navbar */
-    align-items: center; /* semua elemen yang di header akan ditengah*/ 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 nav {
-    margin: 4em; /* bagian home products jadi lebih ke bwah, em/pix */
+    margin: 4em;
 }
 
-/* menargetkan bagian nav dan ul secara bersamaan */
 nav ul {
-    list-style-type: none; /* membuang titik hitam 4 pada list*/
-    /* display: flex;  /* membuat 4 baris product, home dll menjadi 4 kolom vertikal*/
-    /* gap: 4.1em; /* membuat jarak antar home, products, dll */
-    /* margin: 0; /* menghilangakn 'jarak putih' disekitarnya */ 
-
+    list-style-type: none;
     margin: 0;
     display: flex;
     gap: 3.5em;
 }
-    
 
-
-/* menargetkan tautan apapun dalam nav > a */
 nav ul li a {
-    text-decoration: none; /* garis bawah akan hilang */
+    text-decoration: none;
     color: black;
-    text-transform: uppercase; /* text jadi huruf besar semua */
-    font-size: 1.6rem; /* 1.6 diambil dari font size di design 16 mjd 1.6 rem */
-
-    /* ini akan diindukan ke 'active' dibwhnya */
-    position: relative; 
+    text-transform: uppercase;
+    position: relative;
+    font-size: 1.6rem;
 }
 
-
-/*
-    dia sering menggunakan
-     rem untuk font dll
-     em untuk jarak, skala, margin, padding, border dll
-*/
-
-
-
-/* bagian garis bawah di navbar */
 nav ul li a.active:before {
-
-    /* anak dari relatif */
     position: absolute;
-
     content: "";
     width: 35%;
     height: 1px;
@@ -74,78 +53,62 @@ nav ul li a:before {
     content: "";
     width: 0%;
     height: 1px;
-    border-bottom: 2px solid rgb(134, 134, 134);
+    border-bottom: 2px solid rgb(152, 152, 152);
     bottom: -6px;
     transition: width .3s;
 }
 
 
-
-
-
-
-/* HERO SECTION */
+/* Hero Section */
 
 main {
-    display: flex; /* membagi jadi dua kolom */
-    gap: 8em; /* memberi jarak antar dua kolom */
-    margin-top: 11em; /* memberi jarak atas */
+    display: flex;
+    gap: 8em;
+    margin-top: 11em;
 }
 
-.left-col {
-    width: 45%; /* lef colom menempati 45% dari kontainer induk main */
+.left-col {    
+    width: 45%;
 }
-
-.left-col {
-    flex-grow: 1; /* mengkonsumsi jmlh lebar yang dia butuhkan berdsrkan konten yang ada di dalamnya */
+.right-col {
+    flex-grow: 1;
 }
-
 h1 {
-    font-size: 5.2rem; /* dari 52 design jadi 5.2rem */
     font-family: 'Playfair Display';
-    font-weight: normal; /* dgn bobot font 'normal' */
-    margin: 0;
+    font-weight: normal;
+    font-size: 5.2rem;
+    margin:0;
 }
-
 .subhead {
     font-size: 1.8rem;
 }
-
 .cta-btns {
     margin: 5em 0;
 }
-
-/* dia akan kasih style sama pada dua ini */
 .cta-btns, .secondary-cta {
     display: flex;
     gap: 2em;
 }
-
 .primary-cta {
-    background-color: #F2F0DF;
+    background: #F2F0DF;
     font-size: 1.8rem;
     font-weight: bold;
     color: black;
     text-decoration: none;
-    border-radius: 1.9em; /* border radius 19 jadi 1.9em */
-    padding: 1em 2em; /* jarak putih dalam kotak, atas 1, knan kiri 2 */
+    border-radius: 1.9em;
+    padding: 1em 2em;
 }
-
-
 .secondary-cta {
     font-size: 1.8rem;
     text-decoration: none;
     color: black;
-    display: block; /* agar kata-kata tidak terbungkus */
-    padding: 1em 0; /* ats bwah 1 dan kiri kanan 0 */
+    display: block;
+    padding: 1em 0;
 }
-
 .secondary-cta svg {
-    width: 20px; /*pixel keterangan*/
+    width: 20px;
     transition: transform .3s;
 }
-
-/* pixel = ketika zoom in dia akan tetap 20px, its fine, ketika gak butuh untuk diskalakan */
 
 .news {
     display: flex;
@@ -155,87 +118,77 @@ h1 {
     border-radius: .8em;
     position: relative;
 }
-
 .news:before {
     position: absolute;
     content: "";
-    background: url('../img/confetti.svg');
-    width: 100px;
-    height: 100px;
-    /* menaruh svgnya tepat seperti di design */
+    background: url('https://assets.codepen.io/2621168/confetti.svg');
     top: -20px;
     left: -20px;
+    width: 100px;
+    height: 100px;
     z-index: 2;
 }
-
 p.employees {
     font-size: 3.3rem;
     margin: 0;
     font-weight: 200;
-    /* 50k akan sejajar dengan subheading*/
     line-height: 100%;
 }
-
-p.detils {
+p.details {
     font-size: 1.4rem;
     margin: 0;
 }
 
-
-/* Right Column gallery */
+/* Right column gallery */
 
 .right-col {
     display: grid;
     gap: 2.9em;
-
-    /* ini akan membagi menjadi 3 kotak */
     grid-template-columns: repeat(2, auto);
-    /* membagi kiri kiri, kanan, bawah, untuk setiap kotak */
-    grid-template-areas: 
+    grid-template-areas:
         "left right"
         "left bottom";
 }
 
-/* untuk tulisan dalam card disusun */
 .card {
     border-radius: 1.9em;
     padding: 1.6em;
+    background-size: 150%;
     display: flex;
     align-items: end;
-    background-size: 150%;
     transition: background-size .3s;
 }
 
 .card1 {
     grid-area: left;
-    background-image: url('..img/back.jpg');
+    background-image: url('img/back.jpg');
     position: relative;
 }
 
 .card1:before {
     position: absolute;
     content: "";
-    background: url();
-    width: 100px;
-    height: 100px;
+    background: url('https://assets.codepen.io/2621168/tag.svg') no-repeat;
+    width: 100%;
+    height: 100%;
     top: 20px;
     left: -30px;
     pointer-events: none;
 }
+
 .card2 {
     grid-area: right;
-    background-image: url('..img/shoes.jpg');
+    background-image: url('img/cloth.jpg');
 }
-
 .card3 {
     grid-area: bottom;
-    background-image: url('..img/cloth.jpg');
+    background-image: url('img/shoes.jpg');
     background-position: 50%;
 }
 
 .card-details {
     background: white;
-    border-radius: .1em;
+    border-radius: 1em;
     padding: 2em;
     width: 100%;
     display: flex;
@@ -259,8 +212,8 @@ p.product-price {
 }
 
 
+/* Microinteractions */ 
 
-/* Microinteractions Session */
 nav ul li a:hover:before {
     width: 35%;
 }
@@ -270,7 +223,7 @@ nav ul li a:hover:before {
 }
 
 .secondary-cta:hover svg {
-    transform: translate(10px);
+    transform: translateX(10px);
 }
 
 .card:hover {
